@@ -17,9 +17,9 @@ void loop() {
 
   StaticJsonBuffer<200> outputJsonBuffer;
   JsonObject& outputJson = outputJsonBuffer.createObject();
-  outputJson["accX"] = accX;
-  outputJson["accY"] = accY;
-  outputJson["accZ"] = accZ;
+  outputJson["accX"] = 0.0049 * accX - 2.5 + 0.02;
+  outputJson["accY"] = 0.0049 * accY - 2.5 + 0.12;
+  outputJson["accZ"] = 0.0049 * accZ - 2.5 + 0.01;
 
   outputJson.printTo(Serial);
   Serial.println();
